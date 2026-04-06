@@ -1,8 +1,7 @@
+title: PressureLabemoji: 🔬colorFrom: bluecolorTo: purplesdk: streamlitsdk_version: "1.28.0"python_version: "3.10"app_file: app.pypinned: false
 🔬 PressureLab
 معمل ضغط المائع والغاز التفاعلي
 Interactive Fluid & Gas Pressure Laboratory
-
-StreamlitPythonLicenseAI
 
 منصة تعليمية تفاعلية لاستكشاف قوانين ضغط المائع والغاز مع التنبؤ بالذكاء الاصطناعي
 
@@ -56,22 +55,24 @@ PressureLab هو تطبيق تعليمي تفاعلي متكامل يتيح لل
 المتغير المستهدف: الضغط الناتج (Pressure) بالباسكال
 الخوارزمية: Gradient Boosting Regressor (200 شجرة قرار)
 التقسيم: 80% تدريب — 20% اختبار
-الأداء المتوقع
-المقياس	القيمة	التفسير
-R² Score	> 0.9999	النموذج يفسر أكثر من 99.99% من التباين
-RMSE	< 100 Pa	خطأ جذر تربيعي متوسط منخفض جداً
-MAE	< 50 Pa	خطأ مطلق متوسط شبه معدوم
-MAPE	< 0.1%	نسبة خطأ مئوية ضئيلة
-التنبؤ بالحركة / Movement Prediction
-يمكن للمستخدم تحديد مسار حركة (من ارتفاع بداية إلى ارتفاع نهاية) ويقوم النموذج بالتنبؤ بالضغط عند كل نقطة على المسار مع مقارنته بالقيم الفيزيائية الدقيقة وعرض نسبة الخطأ.
-
 🔧 أجهزة قياس الضغط الموضحة
 الجهاز	المبدأ	المدى	الدقة
-🌡️ بارومتر الزئبق — Mercury Barometer	وزن عمود الزئبق	700-800 mmHg	±0.5 mmHg
-📏 مانومتر الأنبوب U — U-tube Manometer	فرق ارتفاع السائل	0-200 kPa	±0.5 mm
-⚙️ مقياس بوردون — Bourdon Tube Gauge	تشوه أنبوب مرن	0-1000 bar	±1%
-📡 مستشعر كهربائي ضغطي — Piezoelectric	شحنة بلورية	0-700 MPa	±0.5%
-🔄 بارومتر Aneroid — Aneroid Barometer	صندوق معدني مرن	870-1085 hPa	±0.5 hPa
-💻 محول ضغط رقمي — Digital Transducer	حساس + معالج دقيق	0-600 bar	±0.1%
+بارومتر الزئبق — Mercury Barometer	وزن عمود الزئبق	700-800 mmHg	±0.5 mmHg
+مانومتر الأنبوب U — U-tube Manometer	فرق ارتفاع السائل	0-200 kPa	±0.5 mm
+مقياس بوردون — Bourdon Tube Gauge	تشوه أنبوب مرن	0-1000 bar	±1%
+مستشعر كهربائي ضغطي — Piezoelectric	شحنة بلورية	0-700 MPa	±0.5%
+بارومتر Aneroid — Aneroid Barometer	صندوق معدني مرن	870-1085 hPa	±0.5 hPa
+محول ضغط رقمي — Digital Transducer	حساس + معالج دقيق	0-600 bar	±0.1%
 🖥️ المتطلبات / Requirements
 streamlit>=1.28.0numpy>=1.24.0pandas>=2.0.0matplotlib>=3.7.0plotly>=5.15.0scikit-learn>=1.3.0
+🚀 طرق التشغيل / Installation & Running
+تشغيل محلي (Local)
+git clone https://github.com/IsraaSamara-ai/PressureLab.gitcd PressureLabpip install -r requirements.txtstreamlit run app.py
+📁 هيكل المشروع / Project Structure
+PressureLab/├── app.py                # الملف الرئيسي├── requirements.txt      # المكتبات المطلوبة└── README.md             # وصف المستودع
+📄 الرخصة / License
+هذا المشروع مرخص تحت رخصة MIT License.
+
+إعداد وتطوير
+
+Israa Samara
