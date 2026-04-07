@@ -70,9 +70,21 @@ streamlit>=1.28.0numpy>=1.24.0pandas>=2.0.0matplotlib>=3.7.0plotly>=5.15.0scikit
 git clone https://github.com/IsraaSamara-ai/PressureLab.gitcd PressureLabpip install -r requirements.txtstreamlit run app.py
 📁 هيكل المشروع / Project Structure
 PressureLab/├── app.py                # الملف الرئيسي├── requirements.txt      # المكتبات المطلوبة└── README.md             # وصف المستودع
+⚠️ ملاحظات مهمة / Important Notes
+هذا المشروع تعليمي بحت — النتائج دقيقة للمقاصد الأكاديمية لكنها لا تغني عن الأجهزة المعايرة في التطبيقات الهندسية الحقيقية
+نموذج الذكاء الاصطناعي مدرب على بيانات من المعادلة البارومترية التي تفترض طبقة هوائية متجانسة (Isothermal Atmosphere) — في الواقع تتغير درجة الحرارة مع الارتفاع
+المعادلة البارومترية المستخدمة لا تنطبق بدقة على الارتفاعات العالية جداً (فوق 80 كم) حيث يبدأ تبخر الجزيئات
+📚 المصادر والمراجع / References
+Halliday, Resnick & Walker — Fundamentals of Physics, Chapter on Fluid Mechanics
+Cengel & Cimbala — Fluid Mechanics: Fundamentals and Applications
+Young & Freedman — University Physics, Chapters on Thermodynamics
+NASA Atmospheric Model
+Scikit-learn Documentation — Gradient Boosting
 📄 الرخصة / License
-هذا المشروع مرخص تحت رخصة MIT License.
+هذا المشروع مرخص تحت رخصة MIT License.يمكنك استخدامه وتعديله وتوزيعه بحرية مع ذكر المصدر.
 
 إعداد وتطوير
 
-Israa Samara
+إسراء يوسف سمارة
+Israa Youssef Samara
+مع تحيات فريق PressureLab
