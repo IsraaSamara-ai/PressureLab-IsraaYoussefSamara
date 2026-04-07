@@ -568,6 +568,7 @@ def show_introduction():
     st.markdown('<div class="hero-title">PressureLab</div>', unsafe_allow_html=True)
     st.markdown('<div class="hero-sub">معمل تفاعلي لاستكشاف ضغط المائع والغاز — من المبادئ الأساسية إلى التنبؤ بالذكاء الاصطناعي</div>',
                 unsafe_allow_html=True)
+        st.caption("Prepared by **Israa Youssef Samara** | إسراء يوسف سمارة")
         st.markdown(
         '<div style="text-align:center;'
         'color:#64748b;font-size:.9rem;'
