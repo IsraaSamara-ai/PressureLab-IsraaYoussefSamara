@@ -566,21 +566,9 @@ def render_sidebar():
 # ═══════════════════════════════════════════════════════════════
 def show_introduction():
     st.markdown('<div class="hero-title">PressureLab</div>', unsafe_allow_html=True)
-    st.markdown('<div class="hero-sub">معمل تفاعلي لاستكشاف ضغط المائع والغاز — من المبادئ الأساسية إلى التنبؤ بالذكاء الاصطناعي</div>',
-                unsafe_allow_html=True)
-        st.markdown(
-        '<div style="text-align:center;'
-        'color:#64748b;font-size:.9rem;'
-        'margin-bottom:1.5rem;">'
-        'Prepared by '
-        '<span style="color:#00d4ff;'
-        'font-weight:700;">'
-        'Israa Youssef Samara</span>'
-        ' | إسراء يوسف سمارة</div>',
-        unsafe_allow_html=True
-    )
-        name_line = '<div style="text-align:center;color:#64748b;font-size:.9rem;margin-bottom:1.5rem;">Prepared by <span style="color:#00d4ff;font-weight:700;">Israa Youssef Samara</span> | إسراء يوسف سمارة</div>'
-    st.markdown(name_line, unsafe_allow_html=True)
+    st.markdown('<div class="hero-sub">معمل تفاعلي لاستكشاف ضغط المائع والغاز — من المبادئ الأساسية إلى التنبؤ بالذكاء الاصطناعي</div>', unsafe_allow_html=True)
+    c1, c2, c3 = st.columns(3)
+    with c1:
     c1, c2, c3 = st.columns(3)
     with c1:
         st.markdown("""
