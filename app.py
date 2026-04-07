@@ -102,14 +102,6 @@ st.markdown("""
 }
 .section-desc{color:#64748b;font-size:.95rem;margin-bottom:1.5rem;}
 
-.info-badge{
-    display:inline-block;background:rgba(124,58,237,0.15);
-    border:1px solid rgba(124,58,237,0.3);border-radius:20px;
-    padding:.25rem .8rem;font-size:.8rem;color:#a78bfa;
-}
-
-.status-green{color:#10b981;} .status-yellow{color:#f59e0b;} .status-red{color:#ef4444;}
-
 .stTabs [data-baseweb="tab-list"]{gap:.5rem;background:transparent;border:none;}
 .stTabs [data-baseweb="tab"]{
     background:#111827;border:1px solid rgba(255,255,255,0.06);
@@ -123,15 +115,6 @@ st.markdown("""
 }
 .stTabs [data-baseweb="tab-highlight"]{background:transparent;}
 .stTabs [data-baseweb="tab-border"]{display:none;}
-
-.stSlider>div>div>div{background:#1e293b !important;}
-.stSelectbox>div>div{background:#111827 !important;border-color:rgba(255,255,255,0.08) !important;}
-
-div[data-testid="stSidebar"]{
-    background:linear-gradient(180deg,#0a0f1c,#070b14);
-    border-left:1px solid rgba(255,255,255,0.05);
-}
-div[data-testid="stSidebar"] *{color:#cbd5e1;}
 
 .comparison-table{width:100%;border-collapse:separate;border-spacing:0;}
 .comparison-table th{
@@ -157,6 +140,12 @@ div[data-testid="stSidebar"] *{color:#cbd5e1;}
     background-size:200% 100%;animation:shimmer 2s infinite;
     margin:1rem 0;
 }
+
+div[data-testid="stSidebar"]{
+    background:linear-gradient(180deg,#0a0f1c,#070b14);
+    border-left:1px solid rgba(255,255,255,0.05);
+}
+div[data-testid="stSidebar"] *{color:#cbd5e1;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -192,64 +181,40 @@ PRESSURE_UNITS = {
 
 DEVICES_INFO = [
     {
-        "name": "Mercury Barometer",
-        "ar": "بارومتر الزئبق",
-        "icon": "🌡️",
+        "name": "Mercury Barometer", "ar": "بارومتر الزئبق", "icon": "🌡️",
         "principle": "يعتمد على وزن عمود الزئبق الذي يتوازن مع الضغط الجوي. اخترعه إيفانجليستا توريشيلي عام 1643.",
-        "range": "700 - 800 mmHg",
-        "accuracy": "±0.5 mmHg",
-        "uses": "قياس الضغط الجوي، التنبؤ بالطقس",
-        "formula": "P = ρ × g × h"
+        "range": "700 - 800 mmHg", "accuracy": "±0.5 mmHg",
+        "uses": "قياس الضغط الجوي، التنبؤ بالطقس", "formula": "P = ρ × g × h"
     },
     {
-        "name": "U-tube Manometer",
-        "ar": "مانومتر الأنبوب على شكل U",
-        "icon": "📏",
+        "name": "U-tube Manometer", "ar": "مانومتر الأنبوب على شكل U", "icon": "📏",
         "principle": "يقيس فرق الضغط بين نقطتين عن طريق فرق ارتفاع السائل في فرعي الأنبوب. يمكن استخدامه مع الزئبق أو الماء.",
-        "range": "0 - 200 kPa",
-        "accuracy": "±0.5 mm",
-        "uses": "قياس ضغط الغازات والسوائل في المختبرات",
-        "formula": "ΔP = ρ × g × Δh"
+        "range": "0 - 200 kPa", "accuracy": "±0.5 mm",
+        "uses": "قياس ضغط الغازات والسوائل في المختبرات", "formula": "ΔP = ρ × g × Δh"
     },
     {
-        "name": "Bourdon Tube Gauge",
-        "ar": "مقياس أنبوب بوردون",
-        "icon": "⚙️",
+        "name": "Bourdon Tube Gauge", "ar": "مقياس أنبوب بوردون", "icon": "⚙️",
         "principle": "أنبوب معدني مسطح منحنٍ يتفتح قليلاً عند تعرضه للضغط، تحول هذه الحركة إلى مؤشر على dial.",
-        "range": "0 - 1000 bar",
-        "accuracy": "±1% من المدى الكامل",
-        "uses": "الصناعة، أنظمة الهيدروليك، غلايات البخار",
-        "formula": "Deformation ∝ Applied Pressure"
+        "range": "0 - 1000 bar", "accuracy": "±1% من المدى الكامل",
+        "uses": "الصناعة، أنظمة الهيدروليك، غلايات البخار", "formula": "Deformation ∝ Applied Pressure"
     },
     {
-        "name": "Piezoelectric Sensor",
-        "ar": "مستشعر الضغط الكهربائي الضغطي",
-        "icon": "📡",
+        "name": "Piezoelectric Sensor", "ar": "مستشعر الضغط الكهربائي الضغطي", "icon": "📡",
         "principle": "مواد بلورية تنتج شحنة كهربائية عند تعرضها لإجهاد ميكانيكي (ضغط). الشحنة تتناسب مع الضغط المؤثر.",
-        "range": "0 - 700 MPa",
-        "accuracy": "±0.5%",
-        "uses": "محركات الاحتراق، المراقبة الصناعية، أبحاث الصدمات",
-        "formula": "Q = d × F (d = piezoelectric coefficient)"
+        "range": "0 - 700 MPa", "accuracy": "±0.5%",
+        "uses": "محركات الاحتراق، المراقبة الصناعية، أبحاث الصدمات", "formula": "Q = d × F (d = piezoelectric coefficient)"
     },
     {
-        "name": "Aneroid Barometer",
-        "ar": "بارومتر الـ Aneroid (بدون سائل)",
-        "icon": "🔄",
+        "name": "Aneroid Barometer", "ar": "بارومتر الـ Aneroid (بدون سائل)", "icon": "🔄",
         "principle": "صندوق معدني مرن مفرغ جزئياً يتغير شكله مع تغير الضغط الجوي. الحركة تُنقل عبر نظام ميكانيكي إلى مؤشر.",
-        "range": "870 - 1085 hPa",
-        "accuracy": "±0.5 hPa",
-        "uses": "التنبؤ بالطقس، الارتفاع عن سطح البحر، الملاحة",
-        "formula": "ΔV ∝ ΔP (elastic deformation)"
+        "range": "870 - 1085 hPa", "accuracy": "±0.5 hPa",
+        "uses": "التنبؤ بالطقس، الارتفاع عن سطح البحر، الملاحة", "formula": "ΔV ∝ ΔP (elastic deformation)"
     },
     {
-        "name": "Digital Pressure Transducer",
-        "ar": "محول الضغط الرقمي",
-        "icon": "💻",
-        "principle": "يجمع بين حساس ضغط (مقاومة أو سعة) ومعالج دقيق لتحويل الضغط إلى إشارة رقمية. يدعم بروتوكالات الاتصال المختلفة.",
-        "range": "0 - 600 bar",
-        "accuracy": "±0.1%",
-        "uses": "الأنظمة الآلية، المراقبة عن بعد، IoT",
-        "formula": "Digital Output = f(Pressure)"
+        "name": "Digital Pressure Transducer", "ar": "محول الضغط الرقمي", "icon": "💻",
+        "principle": "يجمع بين حساس ضغط ومعالج دقيق لتحويل الضغط إلى إشارة رقمية. يدعم بروتوكالات الاتصال المختلفة.",
+        "range": "0 - 600 bar", "accuracy": "±0.1%",
+        "uses": "الأنظمة الآلية، المراقبة عن بعد، IoT", "formula": "Digital Output = f(Pressure)"
     },
 ]
 
@@ -257,36 +222,30 @@ DEVICES_INFO = [
 # PHYSICS FUNCTIONS
 # ═══════════════════════════════════════════════════════════════
 def fluid_pressure(density, height, g=9.81):
-    """P = ρgh"""
     if height < 0:
         return 0.0
     return density * g * height
 
 def total_pressure_at_point(density, depth, surface_pressure=101325.0, g=9.81):
-    """P_total = P_surface + ρgh"""
     return surface_pressure + density * g * max(depth, 0)
 
 def barometric_pressure(P0, M, h, T, g=9.81, R=8.314):
-    """P = P0 × exp(-Mgh / RT)"""
     exponent = -M * g * h / (R * T)
     if exponent < -500:
         return 0.0
     return P0 * math.exp(exponent)
 
 def ideal_gas_pressure(n, T, V, R=8.314):
-    """PV = nRT → P = nRT/V"""
     if V <= 0:
         return float('inf')
     return n * R * T / V
 
 def gravity_at_altitude(alt_m):
-    """g(h) = g0 × (R_earth / (R_earth + h))²"""
     g0 = 9.80665
     Re = 6_371_000
     return g0 * (Re / (Re + alt_m)) ** 2
 
 def density_at_altitude(rho0, M, h, T, g=9.81, R=8.314):
-    """ρ = ρ0 × exp(-Mgh / RT)"""
     exponent = -M * g * h / (R * T)
     if exponent < -500:
         return 0.0
@@ -308,7 +267,6 @@ def train_pressure_ai_model():
     temps = np.random.uniform(220, 350, n_samples)
     gas_idx = np.random.randint(0, len(GASES), n_samples)
     molar_masses = np.array([list(GASES.values())[i]["M"] for i in gas_idx])
-    rho0_vals = np.array([list(GASES.values())[i]["rho"] for i in gas_idx])
     base_pressures = np.random.uniform(95000, 105000, n_samples)
 
     pressures = np.array([
@@ -472,7 +430,7 @@ def draw_barometer():
     ax.annotate('', xy=(2.3, 2.8), xytext=(2.3, 4.5),
                 arrowprops=dict(arrowstyle='<->', color='#fbbf24', lw=1.5))
     ax.text(2.6, 3.65, 'h', color='#fbbf24', fontsize=12, fontweight='bold')
-    ax.text(1.5, 0.5, 'P_atm ↑', ha='center', color='#00d4ff', fontsize=9)
+    ax.text(1.5, 0.5, 'P_atm', ha='center', color='#00d4ff', fontsize=9)
 
     ax.set_xlim(0, 3.5)
     ax.set_ylim(0, 7.5)
@@ -499,8 +457,8 @@ def draw_manometer():
     ax.fill_between([4, 5], [2, 2], [4.5, 4.5], color='#2196F3', alpha=0.5)
     ax.fill_between([2, 4], [2, 2], [2.3, 2.3], color='#2196F3', alpha=0.5)
 
-    ax.text(1.5, 5.3, 'P₁', ha='center', color='#ef4444', fontsize=11, fontweight='bold')
-    ax.text(4.5, 5.3, 'P₂', ha='center', color='#10b981', fontsize=11, fontweight='bold')
+    ax.text(1.5, 5.3, 'P1', ha='center', color='#ef4444', fontsize=11, fontweight='bold')
+    ax.text(4.5, 5.3, 'P2', ha='center', color='#10b981', fontsize=11, fontweight='bold')
     ax.annotate('', xy=(3, 3.5), xytext=(3, 4.5),
                 arrowprops=dict(arrowstyle='<->', color='#fbbf24', lw=1.5))
     ax.text(3.4, 4, 'Δh', color='#fbbf24', fontsize=10, fontweight='bold')
@@ -788,7 +746,6 @@ def show_fluid_pressure():
     )
     st.plotly_chart(fig_p, use_container_width=True)
 
-    # ── Multi-fluid comparison ──
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
@@ -811,19 +768,10 @@ def show_fluid_pressure():
             f"P (bar)": round(p / 1e5, 4),
         })
     df_comp = pd.DataFrame(rows)
-    st.dataframe(df_comp, use_container_width=True, hide_index=True,
-                 column_config={
-                     "المائع": st.column_config.TextColumn("المائع"),
-                     "Fluid": st.column_config.TextColumn("Fluid"),
-                     "ρ (kg/m³)": st.column_config.NumberColumn("ρ (kg/m³)", format="%.0f"),
-                     f"P at {comp_depth}m (kPa)": st.column_config.NumberColumn(
-                         f"P at {comp_depth}m (kPa)", format="%.2f"),
-                     f"P (atm)": st.column_config.NumberColumn("P (atm)", format="%.4f"),
-                     f"P (bar)": st.column_config.NumberColumn("P (bar)", format="%.4f"),
-                 })
+    st.dataframe(df_comp, use_container_width=True, hide_index=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Residential Building ──
+    # Residential Building
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown('<div class="section-title" style="font-size:1.3rem;">🏢 ضغط الماء في المبنى السكني</div>',
                 unsafe_allow_html=True)
@@ -925,7 +873,6 @@ def show_gas_pressure():
             <div class="metric-val">{pct:.1f}</div><div class="metric-unit">% of sea level</div></div>
             """, unsafe_allow_html=True)
 
-    # ── Pressure vs Altitude chart (all gases) ──
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown('<div style="font-weight:700;color:#e2e8f0;font-size:1.05rem;margin-bottom:.5rem;">📈 مقارنة ضغط الغازات مع الارتفاع</div>',
                 unsafe_allow_html=True)
@@ -958,9 +905,8 @@ def show_gas_pressure():
     )
     st.plotly_chart(fig_gas, use_container_width=True)
 
-    # ── Temperature Effect ──
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown('<div style="font-weight:700;color:#e2e8f0;font-size:1.05rem;margin-bottom:.5rem;">🌡️ تأثير درجة الحرارة على الضغط عند ارتفاع ثابت</div>',
+    st.markdown('<div style="font-weight:700;color:#e2e8f0;font-size:1.05rem;margin-bottom:.5rem;">🌡️ تأثير درجة الحرارة على الضغط</div>',
                 unsafe_allow_html=True)
     temp_range = np.linspace(-50, 50, 200)
     temp_k_range = temp_range + 273.15
@@ -982,7 +928,7 @@ def show_gas_pressure():
     )
     st.plotly_chart(fig_temp, use_container_width=True)
 
-    # ── Ideal Gas Calculator ──
+    # Ideal Gas Calculator
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
@@ -1009,7 +955,7 @@ def show_gas_pressure():
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Gas comparison table ──
+    # Gas comparison table
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
@@ -1044,7 +990,6 @@ def show_measurement_devices():
     st.markdown('<div class="section-desc">Pressure Measurement Devices — المبادئ، المدى، الدقة، والاستخدامات</div>',
                 unsafe_allow_html=True)
 
-    # Draw the three main schematic devices
     sd1, sd2, sd3 = st.columns(3)
     with sd1:
         st.markdown('<div style="text-align:center;font-weight:700;color:#e2e8f0;margin-bottom:.5rem;">Mercury Barometer</div>',
@@ -1103,7 +1048,6 @@ def show_measurement_devices():
         if i < len(DEVICES_INFO) - 1:
             st.markdown('<div class="shimmer-line"></div>', unsafe_allow_html=True)
 
-    # Interactive manometer calculator
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
@@ -1164,7 +1108,6 @@ def show_ai_prediction():
     with st.spinner("🔄 تحميل النموذج المدرب..."):
         model, feature_names, metrics, X_test, y_test, y_pred = train_pressure_ai_model()
 
-    # Show metrics
     st.markdown('<div style="font-weight:700;color:#e2e8f0;font-size:1.05rem;margin-bottom:.8rem;">📊 أداء النموذج / Model Performance</div>',
                 unsafe_allow_html=True)
     mm1, mm2, mm3, mm4 = st.columns(4)
@@ -1190,7 +1133,6 @@ def show_ai_prediction():
         <div class="metric-val">{metrics['mape']:.4f}</div><div class="metric-unit">%</div></div>
         """, unsafe_allow_html=True)
 
-    # Prediction vs Actual scatter
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown('<div style="font-weight:700;color:#e2e8f0;font-size:1.05rem;margin-bottom:.5rem;">🎯 التنبؤ مقابل القياس الفعلي</div>',
                 unsafe_allow_html=True)
@@ -1218,7 +1160,6 @@ def show_ai_prediction():
     )
     st.plotly_chart(fig_scatter, use_container_width=True)
 
-    # ── Interactive Prediction ──
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
@@ -1268,7 +1209,6 @@ def show_ai_prediction():
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Path Prediction (Movement) ──
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
     <div class="card">
@@ -1339,3 +1279,27 @@ def show_ai_prediction():
 # MAIN EXECUTION
 # ═══════════════════════════════════════════════════════════════
 def main():
+    render_sidebar()
+
+    tab_intro, tab_fluid, tab_gas, tab_devices, tab_ai = st.tabs([
+        "🏠 Introduction",
+        "💧 Fluid Pressure",
+        "🌬️ Gas Pressure",
+        "🔧 Measurement Devices",
+        "🤖 AI Prediction"
+    ])
+
+    with tab_intro:
+        show_introduction()
+    with tab_fluid:
+        show_fluid_pressure()
+    with tab_gas:
+        show_gas_pressure()
+    with tab_devices:
+        show_measurement_devices()
+    with tab_ai:
+        show_ai_prediction()
+
+
+if __name__ == "__main__":
+    main()
