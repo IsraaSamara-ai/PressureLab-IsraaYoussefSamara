@@ -551,11 +551,13 @@ def render_sidebar():
     </div>
     """, unsafe_allow_html=True)
 
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("""
+        st.sidebar.markdown("""
     <div style="text-align:center;font-size:.7rem;color:#475569;padding:.5rem;">
     PressureLab v1.0<br>
-    Educational Purpose Only
+    Educational Purpose Only<br><br>
+    <span style="color:#00d4ff;">إعداد وتطوير</span><br>
+    <span style="color:#e2e8f0;font-weight:600;">Israa Youssef Samara</span><br>
+    <span style="color:#94a3b8;">إسراء يوسف سمارة</span>
     </div>
     """, unsafe_allow_html=True)
 
